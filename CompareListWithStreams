@@ -1,0 +1,19 @@
+public class Demo{
+/**
+Compare language list but ignore the JAVA from the list
+*/
+  public static void main (String s[]){
+    List<String> list = new ArrayList<String>();
+    list.add("JAVA");
+    list.add("Python");
+    
+     List<String> staticList = new ArrayList<String>();
+    staticList.add("JAVA");
+    staticList.add("Python");
+    staticList.add(".Net");
+    staticList.add("PHP");
+    
+    List<String> collector = staticList.stream().filter(e -> e.contains(list)).filter(i -> !i.equalIgnorecase("JAVA")).Collect(Collector.list());
+    System.Out.Println(collector.size());
+  }
+}
